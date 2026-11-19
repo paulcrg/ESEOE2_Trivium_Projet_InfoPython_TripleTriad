@@ -33,3 +33,6 @@ Projet réalisé en groupe dans le cadre du cycle préparatoire intégré E2 à 
 
 Projet en cours de développement.
 
+## Idées
+
+Idées à intégrer : 
