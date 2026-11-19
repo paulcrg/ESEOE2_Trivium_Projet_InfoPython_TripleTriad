@@ -1,0 +1,21 @@
+Les règles de Triple Triad 
+
+Le matériel : un plateau 3×3 et des cartes. Chaque carte a 4 nombres (haut, droite, bas, gauche), de 1 à 10 (le « A » vaut 10).
+
+Le déroulé :
+
+Chaque joueur a 5 cartes en main, l’un est rouge, l’autre bleu.
+On joue à tour de rôle : on pose une carte sur une case libre.
+À la pose, chaque côté de ta carte est comparé au côté qui lui fait face sur la carte adjacente de l’adversaire. Si ton nombre est strictement plus grand, la carte adverse est retournée et devient à toi.
+Quand les 9 cases sont remplies (le 1er joueur en pose 5, le 2e en pose 4), on compte : celui qui a le plus de cartes de sa couleur gagne. Égalité possible, la 5e carte restante en main compte pour le 1er joueur… en pratique c’est 5 contre 4 + la carte non posée, donc on compte plateau + main.
+
+L’intuition : c’est un mini jeu d’attaque/défense. Poser une carte avec un gros chiffre vers l’adversaire = tu retournes. Mais si ton petit chiffre est face à une carte adverse déjà posée, c’est elle qui est en position de force au prochain coup.
+
+Règles optionnelles courantes (à coder plus tard) :
+
+Open : les mains sont visibles.
+Same : si ta carte touche 2 cartes (ou plus) avec des côtés égaux au tien, elles sont toutes retournées.
+Plus : si la somme des côtés en contact est identique sur 2 paires, retournement.
+Combo : les cartes retournées par Same/Plus peuvent en retourner d’autres en chaîne.
+Élémentaire : cases avec élément, bonus/malus de +1/-1.
+Sudden Death : en cas d’égalité, on rejoue avec les cartes capturées.
