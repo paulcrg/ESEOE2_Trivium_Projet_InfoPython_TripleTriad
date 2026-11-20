@@ -12,7 +12,7 @@ Il n'est pas possible de poser une carte sur une carte déjà existante.
 Poser une carte avec des côtés plus faibles que les cartes adjacentes n'affecte en rien la carte.
 L’intuition : c’est un mini jeu d’attaque/défense. Poser une carte avec un gros chiffre vers l’adversaire = tu retournes. Mais si ton petit chiffre est face à une carte adverse déjà posée, c’est elle qui est en position de force au prochain coup.
 
-Règles optionnelles courantes (à coder plus tard) :
+Règles optionnelles courantes :
 
 Open : les mains sont visibles.
 Same : si ta carte touche 2 cartes (ou plus) avec des côtés égaux au tien, elles sont toutes retournées.
