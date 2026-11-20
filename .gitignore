@@ -1,10 +1,19 @@
-# Environnement virtuel
+
+# Environnements virtuels
 .venv/
 venv/
+mon_env/
 
-# Configuration privée
+# Variables d'environnement
 .env
 
 # Fichiers temporaires Python
 __pycache__/
 *.pyc
+
+# Fichiers VS Code
+.vscode/
+
+# Bases de données locales
+*.db
+*.sqlite3
