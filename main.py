@@ -3,6 +3,7 @@ import os
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
+from bot.interface import MenuAccueil, creer_embed_accueil
 
 
 # Chargement de la configuration
@@ -59,6 +60,16 @@ async def aide(interaction: discord.Interaction):
     )
     await interaction.response.send_message(message)
 
+#Menu
+@bot.tree.command(
+    name="menu",
+    description="Ouvrir le menu de Trivium",
+)
+async def menu(interaction: discord.Interaction):
+    await interaction.response.send_message(
+        embed=creer_embed_accueil(),
+        view=MenuAccueil(),
+    )
 
 # Lancement du bot
 if __name__ == "__main__":
