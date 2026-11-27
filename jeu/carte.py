@@ -76,48 +76,81 @@ class Carte:
 #50 cartes
 CATALOGUE_CARTES: list[Carte] = [
     # Commune
-    Carte("Baguette",       haut=4, droite=3, bas=2, gauche=3, niveau=1),
-    Carte("Croissant",      haut=3, droite=5, bas=2, gauche=4, niveau=1),
-    Carte("Frites",         haut=2, droite=4, bas=5, gauche=3, niveau=1),
-    Carte("Salade César",   haut=5, droite=2, bas=3, gauche=4, niveau=1),
+    Carte("Baguette", haut=4, droite=3, bas=2, gauche=3, niveau=1),
+    Carte("Croissant", haut=3, droite=5, bas=2, gauche=4, niveau=1),
+    Carte("Frites", haut=2, droite=4, bas=5, gauche=3, niveau=1),
+    Carte("Salade César", haut=5, droite=2, bas=3, gauche=4, niveau=1),
+    Carte("Pain au chocolat", haut=4, droite=2, bas=5, gauche=2, niveau=1),
+    Carte("Jambon-beurre", haut=5, droite=3, bas=2, gauche=3, niveau=1),
+    Carte("Tenders", haut=2, droite=5, bas=3, gauche=4, niveau=1),
+    Carte("Axoa", haut=3, droite=2, bas=4, gauche=3, niveau=1),
+    Carte("Purée", haut=2, droite=3, bas=4, gauche=5, niveau=1),
+    Carte("Omelette", haut=4, droite=4, bas=2, gauche=3, niveau=1),
+    Carte("Compote", haut=3, droite=2, bas=3, gauche=5, niveau=1),
+    Carte("Madeleine", haut=5, droite=4, bas=3, gauche=2, niveau=1),
+    Carte("Taboulé", haut=2, droite=4, bas=3, gauche=4, niveau=1),
+    Carte("Chips", haut=4, droite=5, bas=2, gauche=2, niveau=1),
 
     # Peu commune
-    Carte("Crêpe",  haut=5, droite=4, bas=5, gauche=4, niveau=2),
-    Carte("Hot-Dog",        haut=6, droite=3, bas=4, gauche=5, niveau=2),
-    Carte("Tiramisu",       haut=4, droite=6, bas=5, gauche=4, niveau=2),
-    Carte("Sushi Saumon",   haut=6, droite=5, bas=3, gauche=6, niveau=2),
-
+    Carte("Crêpe", haut=5, droite=4, bas=5, gauche=4, niveau=2),
+    Carte("Hot-Dog", haut=6, droite=3, bas=4, gauche=5, niveau=2),
+    Carte("Tiramisu", haut=4, droite=6, bas=5, gauche=4, niveau=2),
+    Carte("Sushi",   haut=6, droite=5, bas=3, gauche=6, niveau=2),
+    Carte("Croque-Monsieur", haut=5, droite=6, bas=3, gauche=5, niveau=2),
+    Carte("Quiche Lorraine", haut=4, droite=5, bas=6, gauche=4, niveau=2),
+    Carte("Gaufre", haut=3, droite=5, bas=5, gauche=6, niveau=2),
+    Carte("Cordon bleu", haut=6, droite=4, bas=5, gauche=3, niveau=2),
+    Carte("Panini", haut=4, droite=3, bas=6, gauche=5, niveau=2),
+    Carte("Nems", haut=6, droite=6, bas=4, gauche=3, niveau=2),
+    Carte("Mousse au chocolat", haut=3, droite=4, bas=6, gauche=6, niveau=2),
+    Carte("Gratin dauphinois", haut=5, droite=5, bas=4, gauche=5, niveau=2),
+     Carte("Nuggets", haut=2, droite=5, bas=3, gauche=4, niveau=1),
     # Rare
     Carte("Pizza 4 fromages", haut=6, droite=6, bas=5, gauche=6, niveau=3),
-    Carte("Burger",     haut=7, droite=5, bas=6, gauche=5, niveau=3),
-    Carte("Tacos 3 viandes",  haut=5, droite=7, bas=7, gauche=5, niveau=3),
-    Carte("pâtes Carbonara",        haut=7, droite=6, bas=4, gauche=7, niveau=3),
+    Carte("Burger", haut=7, droite=5, bas=6, gauche=5, niveau=3),
+    Carte("Tacos 3 viandes", haut=5, droite=7, bas=7, gauche=5, niveau=3),
+    Carte("pâtes Carbonara", haut=7, droite=6, bas=4, gauche=7, niveau=3),
+    Carte("Lasagnes", haut=6, droite=5, bas=7, gauche=6, niveau=3),
+    Carte("Ramen", haut=4, droite=7, bas=6, gauche=7, niveau=3),
+    Carte("Moules-frites", haut=5, droite=6, bas=7, gauche=5, niveau=3),
+    Carte("Hachis Parmentier", haut=6, droite=4, bas=6, gauche=7, niveau=3),
+    Carte("Paella", haut=7, droite=7, bas=5, gauche=4, niveau=3),
+    Carte("Crème brûlée", haut=5, droite=5, bas=7, gauche=7, niveau=3),
+    Carte("Pot au feu", haut=3, droite=7, bas=7, gauche=5, niveau=3),
+    Carte("Escargots de Bourgogne", haut=7, droite=4, bas=7, gauche=3, niveau=3),
+    Carte("Gougères", haut=5, droite=5, bas=5, gauche=7, niveau=3),
 
     # Très rare
-    Carte("Crousty",   haut=8, droite=6, bas=7, gauche=7, niveau=4),
-    Carte("Couscous",   haut=7, droite=8, bas=7, gauche=6, niveau=4),
-    Carte("Tartiflette",      haut=8, droite=7, bas=6, gauche=8, niveau=4),
-    Carte("Kebab",       haut=6, droite=9, bas=7, gauche=7, niveau=4),
+    Carte("Crousty", haut=8, droite=6, bas=7, gauche=7, niveau=4),
+    Carte("Couscous", haut=7, droite=8, bas=7, gauche=6, niveau=4),
+    Carte("Tartiflette", haut=8, droite=7, bas=6, gauche=8, niveau=4),
+    Carte("Kebab", haut=6, droite=9, bas=7, gauche=7, niveau=4),
+    Carte("Raclette", haut=7, droite=6, bas=9, gauche=7, niveau=4),
+    Carte("Cassoulet", haut=9, droite=7, bas=6, gauche=6, niveau=4),
+    Carte("Magret de canard", haut=6, droite=8, bas=6, gauche=9, niveau=4),
+    Carte("Choucroute", haut=7, droite=7, bas=8, gauche=6, niveau=4),
 
     # Légendaires
-    Carte("Bœuf Bourguignon",   haut=10, droite=8,  bas=7,  gauche=8, niveau=5),
-    Carte("Vol au vent",    haut=9,  droite=9,  bas=8,  gauche=8, niveau=5),
-    Carte("Fondue Savoyarde",   haut=8,  droite=10, bas=8,  gauche=7, niveau=5),
+    Carte("Bœuf Bourguignon", haut=10, droite=8,  bas=7,  gauche=8, niveau=5),
+    Carte("Vol au vent", haut=9,  droite=9,  bas=8,  gauche=8, niveau=5),
+    Carte("Fondue Savoyarde", haut=8,  droite=10, bas=8,  gauche=7, niveau=5),
     Carte("Poulet Gaston-Gérard", haut=7,  droite=8,  bas=10, gauche=9, niveau=5),
-]
+    Carte("Blanquette de veau", haut=8,  droite=7,  bas=9,  gauche=10, niveau=5),
+    Carte("Chili con carne", haut=9,  droite=8,  bas=9,  gauche=7,  niveau=5),
+    ]
 
 
 class Deck:
     """Distribution des mains de 5 cartes"""
 
     @staticmethod
-    def generer_main_aleatoire(proprietaire: str, taille: int = 5) -> list[Carte]:
-        """Tire `taille` cartes totalement au hasard dans le catalogue."""
+    def generer_main_aleatoire(proprietaire: str, taille: int = 5):
+        """Tire un nombre 'taille' de cartes au hasard dans le catalogue"""
         selection = random.sample(CATALOGUE_CARTES, k=taille)
         return [carte.copier(proprietaire=proprietaire) for carte in selection]
 
     @staticmethod
-    def generer_main_equilibree(proprietaire: str) -> list[Carte]:
+    def generer_main_equilibree(proprietaire: str):
         """
         Tire une main équilibrée de 5 cartes :
         1 carte de chaque niveau (1, 2, 3, 4 et 5).
@@ -129,13 +162,3 @@ class Deck:
             main.append(carte_choisie.copier(proprietaire=proprietaire))
         random.shuffle(main)
         return main
-
-
-# Test
-if __name__ == "__main__":
-    main_test = Deck.generer_main_equilibree("Joueur1")
-    print("=== Main équilibrée générée ===")
-    for c in main_test:
-        print(c.affichage_compact())
-    print("\nExemple d'affichage détaillé :")
-    print(main_test[0])
