@@ -1,68 +1,36 @@
 import os
+from pathlib import Path
 
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-
-# Chargement de la configuration
-load_dotenv()
-
-TOKEN = os.getenv("DISCORD_TOKEN")
-GUILD_ID = os.getenv("DISCORD_GUILD_ID")
+from bot.commandes import Commandes
+from bot.interface import MenuAccueil
+from bot.preparations import initialiser
 
 
-# Classe principale du bot
 class TriviumBot(commands.Bot):
-
-    def __init__(self):
-        intents = discord.Intents.default()
-        super().__init__(
-            command_prefix="!",
-            intents=intents
-        )
+    def __init__(self, serveur_id: int):
+        super().__init__(command_prefix="!", intents=discord.Intents.default())
+        self.serveur = discord.Object(id=serveur_id)
 
     async def setup_hook(self):
-        # Synchronisation des commandes sur le serveur
-        guild = discord.Object(id=int(GUILD_ID))
-        self.tree.copy_global_to(guild=guild)
-        await self.tree.sync(guild=guild)
+        initialiser()
+        await self.add_cog(Commandes())
+        self.add_view(MenuAccueil())
+        self.tree.copy_global_to(guild=self.serveur)
+        commandes = await self.tree.sync(guild=self.serveur)
+        print(f"{len(commandes)} commandes synchronisées sur le serveur.")
 
     async def on_ready(self):
         print(f"{self.user} est en ligne !")
 
 
-bot = TriviumBot()
-
-
-# Commande /ping
-@bot.tree.command(
-    name="ping",
-    description="Vérifier que le bot fonctionne"
-)
-async def ping(interaction: discord.Interaction):
-    await interaction.response.send_message(
-        "Pong ! Trivium est en ligne."
-    )
-
-
-# Commande /aide
-@bot.tree.command(
-    name="aide",
-    description="Afficher les commandes disponibles"
-)
-async def aide(interaction: discord.Interaction):
-    message = (
-        "**Commandes de Trivium**\n"
-        "/ping - Vérifier le bot\n"
-        "/aide - Afficher les commandes"
-    )
-    await interaction.response.send_message(message)
-
-
-# Lancement du bot
 if __name__ == "__main__":
-    if not TOKEN or not GUILD_ID:
-        raise ValueError("Vérifie ton fichier .env")
-
-    bot.run(TOKEN)
+    load_dotenv(Path(__file__).with_name(".env"))
+    token = os.getenv("DISCORD_TOKEN")
+    serveur_id = os.getenv("DISCORD_GUILD_ID", "")
+    if not token or not serveur_id.isdecimal():
+        raise ValueError("Vérifie DISCORD_TOKEN et DISCORD_GUILD_ID dans ton .env.")
+    TriviumBot(int(serveur_id)).run(token)
